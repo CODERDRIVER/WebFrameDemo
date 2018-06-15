@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>lectrureDemo</artifactId>
+        <groupId>cn.xuyangl</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>struts_demo</artifactId>
+
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.apache.struts/struts2-core -->
+        <!--引入struts依赖-->
+        <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts2-core</artifactId>
+            <version>2.5.10</version>
+        </dependency>
+
+        <!--可以使用注解进行开发 -->
+        <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts2-convention-plugin</artifactId>
+            <version>2.5.10</version>
+        </dependency>
+
+        <!--添加restful api 开发-->
+        <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts2-rest-plugin</artifactId>
+            <version>2.5.10</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.4</version>
+            <scope>provided</scope><!-- 这个jar包只参与本地编译，不参与打包和发布  -->
+        </dependency>
+    </dependencies>
+
+
+</project>

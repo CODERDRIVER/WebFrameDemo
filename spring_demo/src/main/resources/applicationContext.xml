@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="user" class="cn.xuyangl.bean.User">
+
+        <!--对应于setter getter方法-->
+        <!--<property name="name" value="lxy"></property>-->
+        <!--<property name="msg" value="hello"></property>-->
+
+        <!--对应于构造器-->
+        <constructor-arg name="msg" value="hello">
+        </constructor-arg>
+        <constructor-arg name="name" value="lxy">
+        </constructor-arg>
+    </bean>
+    <bean id="car" class="cn.xuyangl.service.Car">
+    </bean>
+    <bean id="carLogger" class="cn.xuyangl.aspect.CarLogger"></bean>
+
+    <aop:config>
+        <!--切面-->
+        <aop:aspect ref="carLogger">
+            <!--切点-->
+            <aop:pointcut expression="execution(* cn.xuyangl.service.Car.run(..))" id="go"/>
+            <!--通知-->
+            <aop:before pointcut-ref="go" method="beforeRun" />
+            <aop:after pointcut-ref="go" method="afterRun" />
+        </aop:aspect>
+    </aop:config>
+</beans>

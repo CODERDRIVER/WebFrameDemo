@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+        配置处理器适配器
+        所有实现了org.springframework.web.servlet.mvc.SimpleController接口的Bean都是springmvc的后端接口
+    -->
+    <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"></bean>
+
+
+    <!--配置处理器映射器-->
+    <!--根据bean的名称查找Handler-->
+    <!--表示将定义的Bean名字作为请求的url-->
+    <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping" />
+
+    <!--处理器配置-->
+    <bean name="/users.action" id="userList" class="cn.xuyangl.handler.ItemListHandler"></bean>
+
+
+    <!--配置视图解析器 jsp视图解析器-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"></property>
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+</beans>
