@@ -14,6 +14,7 @@
     <title>UserInfo</title>
 </head>
 <body>
+<p>${msg}</p>
 <%
     List<User> users = (List<User>)request.getAttribute("users");
 %>
@@ -24,6 +25,7 @@
         <td>Age</td>
         <td>Email</td>
         <td>Sex</td>
+        <td>operation</td>
     </tr>
 
     <%for(User u : users){%>
@@ -33,6 +35,7 @@
         <td><%= u.getAge() %></td>
         <td><%= u.getEmail() %></td>
         <td><%= u.getSex() %></td>
+        <td><a href="/withdrawServlet?name=<%=u.getName()%>&account=1">withdraw</a></td>
     </tr>
 
     <%} %>

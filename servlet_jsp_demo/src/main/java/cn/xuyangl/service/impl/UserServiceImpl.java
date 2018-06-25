@@ -27,4 +27,11 @@ public class UserServiceImpl implements UserService {
     public boolean addUser(User user) {
         return userDao.addUser(user);
     }
+
+
+
+    @Override
+    public double getBalance(String name) {
+        return userDao.getBalance(name);
+    }
 }

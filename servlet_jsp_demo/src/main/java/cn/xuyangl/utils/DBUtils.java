@@ -15,7 +15,7 @@ import java.sql.SQLException;
 public class DBUtils {
 
     public static String DBURL="jdbc:mysql://119.23.75.180:3306/lecture";
-    public static String DBDRIVER="com.mysql.jdbc.Driver";
+    public static String DBDRIVER="com.mysql.cj.jdbc.Driver";
     public static String USERNAME = "root";
     public static String PASSWORD = "1234";
 

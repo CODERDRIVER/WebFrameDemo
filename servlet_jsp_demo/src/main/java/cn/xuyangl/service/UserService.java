@@ -16,4 +16,8 @@ public interface UserService {
     public List<User> findAll() ;
 
     public boolean addUser(User user);
+
+    //查看余额
+    public double getBalance(String name);
+
 }
